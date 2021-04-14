@@ -6,11 +6,11 @@ func main() {
 	app := fiber.New()
 
 	app.Get("/", func(c *fiber.Ctx) {
-		c.Send("Welcome to my awesome app v2.0.0!")
+		c.Status(500).Send("Welcome to my broken app v4.0.0!!")
 	})
 	app.Get("/healthz", func(c *fiber.Ctx) {
-		c.Status(200)
+		c.Status(500)
 	})
 
-	app.Listen(3000)
+	app.Listen(3004)
 }

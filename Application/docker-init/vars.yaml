@@ -1,0 +1,32 @@
+Target_Host: snapp
+docker_packages:
+   ubuntu: 
+     - apt-transport-https
+     - ca-certificates
+     - curl
+     - gnupg-agent
+     - software-properties-common
+     - python3-pip
+     - virtualenv
+     - python3-setuptools
+     - net-tools
+     - iproute2
+images_name: 
+  - nasri/snapp:v1
+  - nasri/haproxy:v1
+proxy: 
+    username: ""
+    password: ""
+    server: "178.22.121.13"
+    port: "8080"
+pip_modules:
+        - pip
+        - docker
+        - docker-compose 
+
+nameserver:
+  ns1: 8.8.8.8
+  ns2: 4.2.2.4 
+docker:
+   username: "nasri"
+   password: "6056071"     
