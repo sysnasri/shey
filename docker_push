@@ -4,4 +4,3 @@ docker push nasri/snapp:v1
 docker push nasri/snapp:v2
 docker push nasri/snapp:v3
 docker push nasri/snapp:v4
-docker push nasri/haproxy:v1

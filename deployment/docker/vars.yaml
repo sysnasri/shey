@@ -1,5 +1,6 @@
-Target_Host: "{{Target_Host}}"
+Target_Host: all
 images_name: 
+    
 
 proxy: 
     username: ""
