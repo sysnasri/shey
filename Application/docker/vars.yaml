@@ -1,4 +1,4 @@
-Target_Host: snapp
+Target_Host: "{{Target_Host}}"
 docker_packages:
    ubuntu: 
      - apt-transport-https

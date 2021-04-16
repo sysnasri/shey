@@ -1,7 +1,36 @@
 # Here we can install docker via ansible
+    you can set your own variables in vars.yaml 
+vars.yaml , you can add default containers that needs to be pulled from docker hub
+
+    images_name: 
+      - nasri/snapp:v1
+
+If you are located in restricated area you can use proxy 
+
+    proxy: 
+       username: ""
+       password: ""
+       server: ""
+       port: ""     
+
+Pipe modules can be named here for deployment purpose  these are usefull when deploy application with docker compose and ansible 
+
+    pip_modules:
+        - pip
+        - docker
+        - docker-compose
 
 
+you have option to chose shecan.ir name server for docker or just use http proxy which is more secure and faster. 
 
-I am going to use dynamic inventory in ansible in conjunction with openstack 
 
-ansible-playbook -i openstack_invenotry.py docker.yaml
+    nameserver:
+      ns1: 8.8.8.8
+      ns2: 4.2.2.4 
+
+in some situation docker needs to be loged in. we could use ansible vault for credentials. 
+
+
+    docker:
+      username: ""
+      password: ""                    
