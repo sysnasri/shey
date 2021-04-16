@@ -2,6 +2,6 @@
 - name: Install docker On target host
   vars_files:
       - vars.yaml
-  hosts: all
+  hosts: "{{ Target_Host }}"
   roles:
     - { role: sysnasri.docker }
