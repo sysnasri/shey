@@ -1,20 +1,17 @@
 Target_Host: "{{Target_Host}}"
 images_name: 
-  - nasri/snapp:v1
-  - nasri/haproxy:v1
+
 proxy: 
     username: ""
     password: ""
-    server: "178.22.121.13"
-    port: "8080"
+    server: ""
+    port: ""
 pip_modules:
-        - pip
-        - docker
-        - docker-compose 
+
 
 nameserver:
-  ns1: 8.8.8.8
-  ns2: 4.2.2.4 
+  ns1: 
+  ns2: 
 docker:
-   username: "nasri"
-   password: "6056071"     
+   username: ""
+   password: ""     
