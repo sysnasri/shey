@@ -12,5 +12,5 @@ func main() {
 		c.Status(200)
 	})
 
-	app.Listen(3001)
+	app.Listen(3000)
 }

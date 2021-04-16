@@ -23,5 +23,5 @@ RUN mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 COPY --chown=0:0 --from=builder $APP_HOME/v4 $APP_HOME
 #USER $APP_USER
-EXPOSE 3003
+EXPOSE 3000
 CMD ["./v4"]

@@ -1,5 +1,6 @@
-# sheypoor challange for DevOps opportunaty 
+# sheypoor challange for DevOps opportunity 
    The challange consist of several steps which are listed in the following section :
+
      # Part 1: Application
 
           A simple application which should have a version and a health check api
@@ -30,9 +31,9 @@
   you can refer to helm folder for helm chart instruction. 
 
 # Part 3 
-  I have used cloud instances for deployment but if you want to setup cluster locally, you can use the vagrant to bootstrap the cluster. 
+  I have used cloud instances for deployment but if you want to setup cluster locally, you can find and use the vagrant to bootstrap the cluster in deployment folder. 
      
-     simply do vagrant up , it installs ubuntu and docker
+     simply do vagrant up, it installs ubuntu and docker
      
 
 
