@@ -1,7 +1,7 @@
 ---
 - name: Install docker On target host
   vars_files:
-      - vras.yaml
+      - vars.yaml
   hosts: all
   roles:
     - { role: sysnasri.docker }
