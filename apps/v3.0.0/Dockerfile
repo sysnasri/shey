@@ -6,7 +6,7 @@ FROM golang as builder
 ENV APP_USER app
 ENV APP_HOME /go/src/v3
 RUN groupadd $APP_USER && useradd -m -g $APP_USER -l $APP_USER
-RUN mkdir -p $APP_HOME && chown -R $APP_USER:$APP_USER $APP_HOME
+RUN mkdir -p $APP_HOME && chown -R $APP_USER:$APP_USER $APP_HOME && chmod 755 $APP_HOME
 WORKDIR $APP_HOME
 USER $APP_USER
 COPY apps/v3.0.0/. .
