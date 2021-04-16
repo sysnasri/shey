@@ -1,5 +1,5 @@
 # TODO v3.0.0
-FROM golang:alpine as builder 
+FROM golang:1.15 as builder 
 # uncomment if you are located in Iran
 #ENV HTTPS_PROXY=http://178.22.121.13:8080
 #ENV HTTP_PROXY=http://178.22.121.13:8080
