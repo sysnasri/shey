@@ -1,0 +1,5 @@
+---
+- name: Install docker On target host
+  hosts: all
+  roles:
+    - { role: sysnasri.docker }
