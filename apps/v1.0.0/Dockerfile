@@ -5,21 +5,18 @@ FROM golang:1.15 as builder
 #ENV HTTP_PROXY=http://178.22.121.13:8080
 ENV APP_USER app
 ENV APP_HOME /go/src/v1
-RUN groupadd $APP_USER && useradd -m -g $APP_USER -l $APP_USER
-RUN mkdir -p $APP_HOME && chown -R $APP_USER:$APP_USER $APP_HOME && chmod 755 $APP_HOME
+RUN groupadd $APP_USER && useradd -m -g $APP_USER -l $APP_USER \
+   mkdir -p $APP_HOME && chown -R $APP_USER:$APP_USER $APP_HOME && chmod 755 $APP_HOME
 WORKDIR $APP_HOME
 USER $APP_USER
 COPY apps/v1.0.0/. .
-RUN go mod download
-RUN go mod verify
-RUN go build -o v1
+RUN go mod download && go mod verify && go build -o v1
 FROM ubuntu
 RUN apt update -y
 RUN apt install net-tools wget iputils-ping curl -y
 ENV APP_USER app
 ENV APP_HOME /go/src/v1
-RUN groupadd $APP_USER && useradd -m -g $APP_USER -l $APP_USER
-RUN mkdir -p $APP_HOME
+RUN groupadd $APP_USER && useradd -m -g $APP_USER -l $APP_USER && mkdir -p $APP_HOME
 WORKDIR $APP_HOME
 COPY --chown=0:0 --from=builder $APP_HOME/v1 $APP_HOME
 #USER $APP_USER
