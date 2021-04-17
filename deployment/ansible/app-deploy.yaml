@@ -5,8 +5,12 @@
   tasks : 
   - name: install git on target machine 
     package:
-        name: git 
-        state: present  
+        name: "{{item}}" 
+        state: present
+    lopp: "{{ required_packages }}"
+  - name: install yaml python module
+    pip:
+      name: PyYAML
 
   - name : pull source codes from git repository 
     git: 

@@ -1,0 +1,4 @@
+required_packages:
+    - python-setuptools
+    - python-pip
+    - git
