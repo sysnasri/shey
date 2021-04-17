@@ -24,11 +24,11 @@
     command: cp /tmp/linux-amd64/helm /usr/local/bin/helm
     args:
         creates: /usr/local/bin/helm
-- name: Deploy snapp chart from local path
-  community.kubernetes.helm:
-    name: stable
-    chart_ref: /tmp/shey/deployment/kubernetes/chart
-    release_namespace: snapp
-    create_namespace: yes
+  - name: Deploy snapp chart from local path
+    community.kubernetes.helm:
+      name: stable
+      chart_ref: /tmp/shey/deployment/kubernetes/chart
+      release_namespace: snapp
+      create_namespace: yes
 
 
