@@ -3,7 +3,7 @@
   hosts: k8s_master
   vars_files: vars.yaml
   tasks : 
-  - name: install git on target machine 
+  - name: install packages on target machine 
     package:
         name: "{{item}}" 
         state: present
