@@ -20,8 +20,8 @@ kubernetes cluster has been setup with kubespray you can setup the cluster via t
 
           vi inventory/sheypoor/group_vars/all/proxy.yml
 
-               http_proxy: "136.243.227.161:1373"
-               https_proxy: "136.243.227.161:1373"
+               http_proxy: "IP:Port"
+               https_proxy: "IP:Port"
 
 # kubespray installation
      declare -a IPS=( ip1 ip2 ip3 )

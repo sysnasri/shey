@@ -1,0 +1,34 @@
+---
+- name: This task deploys a sample application for sheypoor challange
+  hosts: k8s_master
+  vars_files: vars.yaml
+  tasks : 
+  - name: install git on target machine 
+    package:
+        name: git 
+        state: present  
+
+  - name : pull source codes from git repository 
+    git: 
+      repo: 'https://github.com/sysnasri/shey'
+      dest: /tmp/shey
+      update: yes
+  - name: Retrieve helm binary archive.
+    unarchive:
+        src: https://get.helm.sh/helm-v3.5.4-linux-amd64.tar.gz
+        dest: /tmp
+        creates: /usr/local/bin/helm
+        remote_src: yes
+
+  - name: Move helm binary into place.
+    command: cp /tmp/linux-amd64/helm /usr/local/bin/helm
+    args:
+        creates: /usr/local/bin/helm
+- name: Deploy snapp chart from local path
+  community.kubernetes.helm:
+    name: stable
+    chart_ref: /tmp/shey/deployment/kubernetes/chart
+    release_namespace: snapp
+    create_namespace: yes
+
+

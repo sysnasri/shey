@@ -1,6 +1,13 @@
 # Here we can install docker via ansible
-    you can set your own variables in vars.yaml 
-vars.yaml , you can add default containers that needs to be pulled from docker hub
+    docker ansible role can be obtained from the ansible galaxy 
+
+            https://galaxy.ansible.com/sysnasri/docker
+
+            ansible-galaxy install sysnasri.docker
+
+            
+
+in vars.yaml , you can overide default variables: 
 
     images_name: 
       - nasri/snapp:v1
