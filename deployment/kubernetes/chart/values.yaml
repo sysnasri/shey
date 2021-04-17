@@ -2,9 +2,9 @@
 # Default values for snapp Helm chart.
 
 # Deployment object default values.
-image: sysnasri/snapp
+image: nasri/snapp:v1
 imagePullPolicy: IfNotPresent
 replicas: 3
 
 # Service object default values.
-serviceType: ClusterIP
+serviceType: NodePort
